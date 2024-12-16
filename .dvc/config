@@ -1,6 +1,5 @@
 [core]
     remote = myremote
+    autostage = true
 ['remote "myremote"']
-    url = gdrive://1VFqgzR7xkOW2hJlpNn6ExcfvZ-1anIoU
-    gdrive_acknowledge_abuse = true
-    gdrive_use_service_account = true
+    url = gs://pristiniskin/dataset
