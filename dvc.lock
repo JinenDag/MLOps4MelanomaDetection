@@ -1,0 +1,80 @@
+schema: '2.0'
+stages:
+  1-data_generation:
+    cmd: python3 src/data/DataPreparation.py
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: abbf37d979de20881b5c091e6c51ab15
+      size: 240
+    - path: src/data/DataPreparation.py
+      hash: md5
+      md5: df31d2161e72f0075b08cf942ef63c2a
+      size: 3045
+  1-data_update:
+    cmd: python3 src/data/DataUpdate.py
+    deps:
+    - path: data
+      hash: md5
+      md5: d5c8553d494688476b7b7c5063106f15.dir
+      size: 194622055
+      nfiles: 580
+    - path: src/data/DataUpdate.py
+      hash: md5
+      md5: 95144863ffc829858bf4aed0cb7d080a
+      size: 586
+  2-model_init:
+    cmd: python3 src/model/Model.py
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: abbf37d979de20881b5c091e6c51ab15
+      size: 240
+    - path: src/model/Model.py
+      hash: md5
+      md5: adf43394686b3b48e86854505bd2c60e
+      size: 1054
+  3-model_init:
+    cmd: python3 src/model/ModelTraining.py
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: c00cf42ca639c4def9929a5d1acb51e4
+      size: 241
+    - path: src/model/ModelTraining.py
+      hash: md5
+      md5: 67800c342c5ee7c4387676d0150ca9cb
+      size: 1601
+  3-model_training:
+    cmd: python3 src/model/ModelTraining.py
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: abbf37d979de20881b5c091e6c51ab15
+      size: 240
+    - path: src/model/ModelTraining.py
+      hash: md5
+      md5: c8a7b689c78b25cdc4f4a50a179175ce
+      size: 1652
+  3-model_validation:
+    cmd: python3 src/model/ModelValidation.py
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: abbf37d979de20881b5c091e6c51ab15
+      size: 240
+    - path: src/model/ModelValidation.py
+      hash: md5
+      md5: ee3f3df80ea4b3589b80534d0f513d20
+      size: 3005
+  3-model_testing:
+    cmd: python3 src/test/ModelTesting.py
+    deps:
+    - path: models/model.h5
+      hash: md5
+      md5: e5b303d4550bde9308e4cb376279934e
+      size: 5814840
+    - path: src/test/ModelTesting.py
+      hash: md5
+      md5: 623f8a66b7a3a4dd1260438edb3d29b1
+      size: 1210

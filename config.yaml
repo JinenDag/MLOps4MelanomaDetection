@@ -1,0 +1,13 @@
+# Data Preprocessing
+rescale: 1./255
+shear_range: 0.3
+zoom_range: 0.3
+horizontal_flip : False
+batch_size_Data_Generator: 32
+# Model Hyperparameters
+optimizer: SGD
+batch_size: 32
+epochs: 15
+lr: 0.001
+Experiment_name: Exp1
+Data_version: ver2
